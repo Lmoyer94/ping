@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://drs05it413j5r"]
 
-[ext_resource type="Script" path="res://Scores.gd" id="1_jncqd"]
+[ext_resource type="Script" path="res://scripts/Scores.gd" id="1_t0n5n"]
 
 [sub_resource type="Theme" id="Theme_r0yp3"]
 default_font_size = 50
@@ -10,25 +10,33 @@ default_font_size = 50
 
 [node name="Scores" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 40.0
-script = ExtResource("1_jncqd")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t0n5n")
 
 [node name="AIScore" type="Label" parent="."]
-layout_mode = 0
-offset_left = 860.0
-offset_right = 900.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = -60.0
 offset_bottom = 69.0
+grow_horizontal = 2
 theme = SubResource("Theme_r0yp3")
 text = "0"
-horizontal_alignment = 1
 
 [node name="PlayerScore" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1060.0
-offset_right = 1100.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 60.0
+offset_right = 100.0
 offset_bottom = 69.0
+grow_horizontal = 2
 theme = SubResource("Theme_c0oyf")
 text = "0"
-horizontal_alignment = 1

@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://b80qdyfbqf2xj"]
+
+[ext_resource type="Script" path="res://scripts/splashscreen.gd" id="1_afb4q"]
+
+[sub_resource type="Theme" id="Theme_mg02n"]
+default_font_size = 150
+
+[sub_resource type="Theme" id="Theme_usenc"]
+default_font_size = 50
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_afb4q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.450685, 0.0961022, 0.00755347, 1)
+
+[node name="ResultText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_mg02n")
+text = "You lost!"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = 160.0
+offset_right = 43.5
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_usenc")
+text = "Play Again?"
+
+[node name="YesButton" type="Button" parent="Label2"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 91.0
+offset_bottom = 177.0
+text = "Yes"
+
+[node name="NoButton" type="Button" parent="Label2"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 100.0
+offset_right = 278.0
+offset_bottom = 177.0
+text = "No"
+
+[connection signal="pressed" from="Label2/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="Label2/NoButton" to="." method="_on_no_button_pressed"]

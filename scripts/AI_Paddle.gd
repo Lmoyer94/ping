@@ -1,19 +1,10 @@
 extends CharacterBody2D
 
 @export var ball: CharacterBody2D
-@export var speed: int = 425
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:	
-	pass
-
+@export var speed: int = 415
 
 func get_movement() -> void:
-	ball = get_node("../Ball")
+	ball = get_node_or_null("../Ball")
 	if ball:
 		var ballPos = ball.position
 		var dist = position.y - ballPos.y

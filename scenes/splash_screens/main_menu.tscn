@@ -1,14 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgqjixnip15bx"]
+[gd_scene load_steps=5 format=3 uid="uid://cgqjixnip15bx"]
 
-[ext_resource type="Script" path="res://MainMenu.gd" id="1_ggflr"]
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_uoo62"]
 
 [sub_resource type="Theme" id="Theme_d0wrm"]
 default_font_size = 150
 
 [sub_resource type="Theme" id="Theme_umury"]
-default_font_size = 50
-
-[sub_resource type="Theme" id="Theme_kdxdu"]
 default_font_size = 50
 
 [sub_resource type="Theme" id="Theme_lduig"]
@@ -21,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ggflr")
+script = ExtResource("1_uoo62")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -34,12 +31,16 @@ color = Color(0, 0, 0.196078, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -102.0
-offset_right = 313.0
-offset_bottom = 103.0
+offset_left = -156.5
+offset_top = -102.5
+offset_right = 156.5
+offset_bottom = 102.5
+grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_d0wrm")
 text = "Ping"
@@ -61,32 +62,20 @@ grow_vertical = 2
 
 [node name="PlayButton" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = -100.0
-offset_right = 9.0
+offset_left = -150.0
+offset_right = -41.0
 offset_bottom = 77.0
 theme = SubResource("Theme_umury")
 text = "Play"
 
-[node name="OptionsButton" type="Button" parent="Buttons"]
-layout_mode = 0
-offset_left = -175.0
-offset_top = 100.0
-offset_right = 24.0
-offset_bottom = 177.0
-theme = SubResource("Theme_kdxdu")
-text = "Options"
-
 [node name="QuitButton" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = -100.0
-offset_top = 200.0
-offset_right = 13.0
-offset_bottom = 277.0
+offset_left = -150.0
+offset_top = 100.0
+offset_right = -37.0
+offset_bottom = 177.0
 theme = SubResource("Theme_lduig")
 text = "Quit"
 
-[node name="SettingsMenu" type="Popup" parent="."]
-
 [connection signal="pressed" from="Buttons/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="Buttons/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_quit_button_pressed"]

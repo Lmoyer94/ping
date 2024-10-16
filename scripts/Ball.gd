@@ -5,10 +5,6 @@ extends CharacterBody2D
 @export var captured: bool = true
 @export var captured_by_player: bool = true
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if captured && not captured_by_player:
@@ -30,7 +26,7 @@ func _physics_process(delta: float) -> void:
 			var ai = get_node("../AIPaddle")
 			if ai:
 				var aiPos = ai.position
-				var dist = position.y - ai.Pos.y
+				var dist = position.y - aiPos.y
 				
 				if dist > 0:
 					velocity.y = -ai.speed
@@ -65,6 +61,6 @@ func release():
 	var value = rnd.randi_range(0, 1)
 		
 	if value == 0:
-		velocity.y = -speed / 3
+		velocity.y = -speed / 3.0
 	elif value == 1:
-		velocity.y = speed / 3
+		velocity.y = speed / 3.0

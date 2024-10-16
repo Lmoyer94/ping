@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://6oxr6mg7kr88"]
 
-[ext_resource type="Script" path="res://Court.gd" id="1_xkc1o"]
+[ext_resource type="Script" path="res://scripts/Court.gd" id="1_013oe"]
 
 [node name="Court" type="Node2D"]
-script = ExtResource("1_xkc1o")
+script = ExtResource("1_013oe")
 
 [node name="Camera2D" type="Camera2D" parent="."]
