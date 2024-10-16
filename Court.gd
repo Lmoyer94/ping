@@ -10,13 +10,10 @@ static var AIPaddle: PackedScene = preload("res://scenes/AIPaddle.tscn")
 static var PlayerPaddle: PackedScene = preload("res://scenes/Paddle.tscn")
 static var Ball: PackedScene = preload("res://scenes/Ball.tscn")
 
-var MainMenu : PackedScene = preload("res://scenes/main_menu.tscn")
+var mainmenu = load("res://scenes/main_menu.tscn")
 
 var screen_size: Vector2
 var scores
-
-signal AIScore
-signal PlayerScore
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -135,9 +132,9 @@ func ResetPlayer():
 
 func _on_ai_win() -> void:
 	#in future, splash screen that says "YOU LOST!"
-	get_tree().change_scene_to_packed(MainMenu)
+	get_tree().call_deferred("change_scene_to_packed", mainmenu)
 
 
 func _on_player_win() -> void:
 	#in future, splash screen that says "YOU WIN!"
-	get_tree().change_scene_to_packed(MainMenu)
+	get_tree().call_deferred("change_scene_to_packed", mainmenu)
