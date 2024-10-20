@@ -24,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.450685, 0.0961022, 0.00755347, 1)
+color = Color(4.81308e-08, 0.622088, 0.283158, 1)
 
 [node name="ResultText" type="Label" parent="."]
 layout_mode = 1
@@ -72,3 +72,6 @@ offset_top = 100.0
 offset_right = 278.0
 offset_bottom = 177.0
 text = "No"
+
+[connection signal="pressed" from="Label2/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="Label2/NoButton" to="." method="_on_no_button_pressed"]
