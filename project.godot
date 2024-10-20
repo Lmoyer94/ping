@@ -32,11 +32,6 @@ window/vsync/vsync_mode=2
 
 project/assembly_name="Ping"
 
-[editor]
-
-version_control/plugin_name="GitPlugin"
-version_control/autoload_on_startup=true
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot-4-aseprite-importers-a9afe66b68b22474e7d75c3cc5e5b3e064530c7c/addons/nklbdev.aseprite_importers/plugin.cfg")
